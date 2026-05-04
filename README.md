@@ -1,4 +1,4 @@
-# 📚 College Assignment – DSA Practice
+# 📚 Java with – DSA Practice
 
 This repository contains my Data Structures and Algorithms (DSA) practice solutions as part of my college assignments and self-learning journey. It includes a wide range of problems solved from platforms like LeetCode, CodeChef, HackerRank, and others.
 
