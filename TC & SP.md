@@ -25,4 +25,34 @@ Although the execution time is different, the **Time Complexity remains the same
 
 ## Difinition
 
-# Time Complexity (TC) -> Time Complexity is rate at which the time taken with respect to input size.
+**Time Complexity (TC) -> Time Complexity is rate at which the time taken with respect to input size.**
+
+# Example 
+
+for(i = 1; i<=n ; i++){
+Cout "Raj"
+}
+
+Technically the time complexity is O(3n) but we write O(n).
+
+Why O(3n)
+
+i <= n      - n time
+cout "Raj"  - n time
+i++         - n time
+
+Total operations ≈ 3n
+
+but we are not write like O(3n) we are write like O(n) because we ignore constant.
+
+Rule of Big O
+O(3n) → O(n)
+O(5n) → O(n)
+O(100n) → O(n)
+O(n + 10) → O(n)
+O(2n²) → O(n²)
+
+
+
+
+
