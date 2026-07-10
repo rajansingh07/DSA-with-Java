@@ -1,6 +1,6 @@
-# Time Complexity (TC) & Space Complexity
+# Time Complexity and Space Complexity (SC)
 
-## What is Time Complexity?
+## What is Time Complexity? (TC)
 
 Many beginners think **Time Complexity = Time Taken**, but this is **not true**.
 
@@ -64,7 +64,7 @@ O(n + 10) → O(n)
 O(2n²)  → O(n²)
 ```
 
-## What is Space Complexity?
+## What is Space Complexity? (SC)
 
 Many beginners think **Space Complexity = Memory Used**, but this is **not completely true**.
 
