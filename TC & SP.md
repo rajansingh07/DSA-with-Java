@@ -1,4 +1,4 @@
-# Time Complexity (TC)
+# Time Complexity (TC) & Space Complexity
 
 ## What is Time Complexity?
 
@@ -34,17 +34,17 @@ Although the execution time is different, the **Time Complexity remains the same
 
 ```java
 for(i = 1; i <= n; i++) {
-    Sout "Raj"
+    sout "Raj"
 }
 ```
-
+                    
 Technically the time complexity is **O(3n)** but we write **O(n)**.
 
 ### Why O(3n)
 
 ```
 i <= n      - n time
-cout "Raj"  - n time
+sout "Raj"  - n time
 i++         - n time
 ```
 
@@ -63,3 +63,59 @@ O(100n) → O(n)
 O(n + 10) → O(n)
 O(2n²)  → O(n²)
 ```
+
+## What is Space Complexity?
+
+Many beginners think **Space Complexity = Memory Used**, but this is **not completely true**.
+
+> **Space Complexity tells us how the memory usage grows as the input size (N) increases.**
+
+---
+
+## Definition
+
+**Space Complexity (SC) -> Space Complexity is the rate at which the extra memory required grows with respect to the input size.**
+
+---
+
+## Example
+
+```cpp
+int sum = 0;
+
+for (int i = 1; i <= n; i++) {
+    sum += i;
+}
+```
+
+The program only uses two extra variables:
+
+* `sum`
+* `i`
+
+The amount of extra memory does not change even if `n` becomes very large.
+
+**Space Complexity = O(1)**
+
+---
+
+## Another Example
+
+```java
+int arr[n];
+```
+
+Here, an array of size `n` is created.
+
+As `n` increases, the memory required also increases.
+
+**Space Complexity = O(n)**
+
+---
+
+## Key Points
+
+* Space Complexity measures **extra memory used** by an algorithm.
+* It is based on the **input size (N)**.
+* Constant extra memory → **O(1)**
+* Memory that grows with `N` → **O(n)**
