@@ -1,12 +1,12 @@
-# Time Complexity and Space Complexity (SC)
+# Time Complexity and Space Complexity (TC & SC)
 
 ## What is Time Complexity? (TC)
 
-Many beginners think **Time Complexity = Time Taken**, but this is **not true**.
+**Time Complexity** is the **rate at which the time taken by an algorithm increases with respect to the input size.**
 
-The actual time taken by a program depends on many factors, such as:
+The actual execution time of a program depends on several factors:
 
-* Machine specifications (CPU, RAM)
+* Machine specifications
 * Programming language
 * Compiler optimizations
 * Operating System
@@ -15,70 +15,79 @@ The actual time taken by a program depends on many factors, such as:
 
 Suppose the same program runs on two different machines:
 
-* 💻 New Mac: **1 second**
-* 💻 Old Windows PC: **2 seconds**
+* New Mac → **1 second**
+* Old Windows PC → **2 seconds**
 
-Although the execution time is different, the **Time Complexity remains the same**.
+The actual execution time is different, but the **Time Complexity remains the same**.
 
-> **Time Complexity does not measure the actual time taken.**
-
----
-
-## Definition
-
-**Time Complexity (TC) -> Time Complexity is rate at which the time taken with respect to input size.**
-
----
-
-# Example
-
-```java
-for(i = 1; i <= n; i++) {
-    sout "Raj"
-}
-```
-                    
-Technically the time complexity is **O(3n)** but we write **O(n)**.
-
-### Why O(3n)
-
-```
-i <= n      - n time
-sout "Raj"  - n time
-i++         - n time
-```
-
-**Total operations ≈ 3n**
-
-But we are not write like **O(3n)**, we are write like **O(n)** because we ignore constant.
-
----
-
-## Rule of Big O
-
-```
-O(3n)   → O(n)
-O(5n)   → O(n)
-O(100n) → O(n)
-O(n + 10) → O(n)
-O(2n²)  → O(n²)
-```
-
-## What is Space Complexity? (SC)
-
-Many beginners think **Space Complexity = Memory Used**, but this is **not completely true**.
-
-> **Space Complexity tells us how the memory usage grows as the input size (N) increases.**
-
----
-
-## Definition
-
-**Space Complexity (SC) -> Space Complexity is the rate at which the extra memory required grows with respect to the input size.**
+**Time Complexity does not measure the actual time taken. It measures how the execution grows with respect to the input size.**
 
 ---
 
 ## Example
+
+```java
+for (int i = 1; i <= n; i++) {
+    System.out.println("Raj");
+}
+```
+
+The loop runs `n` times.
+
+Approximately:
+
+```text
+i <= n       → n times (Initialization)
+i <= n       → n times (Comparison)
+print        → n times (Printing)
+i++          → n times (Increment)
+```
+
+Total operations:
+
+```text
+≈ 4n
+```
+
+So technically:
+
+```text
+O(4n)
+```
+
+But we write:
+
+```text
+O(n)
+```
+
+because **constant factors are ignored in Big-O notation**.
+
+---
+
+## Rules of Big-O
+
+```text
+O(3n)       → O(n)
+
+O(5n)       → O(n)
+
+O(100n)     → O(n)
+
+O(n + 10)   → O(n)
+
+O(2n²)      → O(n²)
+
+O(3n² + n)  → O(n²)
+```
+
+### Rule **Ignore constants and lower-order terms, and keep the dominant term.**
+
+# What is Space Complexity? (SC)
+
+**Space Complexity** is the **rate at which the extra memory required by an algorithm increases with respect to the input size.**
+
+### Example
 
 ```cpp
 int sum = 0;
@@ -88,34 +97,52 @@ for (int i = 1; i <= n; i++) {
 }
 ```
 
-The program only uses two extra variables:
+The algorithm uses only a fixed amount of extra memory:
 
-* `sum`
-* `i`
+```text
+sum
+i
+```
 
-The amount of extra memory does not change even if `n` becomes very large.
+The memory requirement does not increase when `n` increases.
 
-**Space Complexity = O(1)**
+Therefore:
+
+```text
+Space Complexity = O(1)
+```
 
 ---
 
 ## Another Example
 
 ```java
-int arr[n];
+int[] arr = new int[n];
 ```
 
-Here, an array of size `n` is created.
+An array of size `n` is created.
 
-As `n` increases, the memory required also increases.
+As `n` increases, the memory requirement also increases.
 
-**Space Complexity = O(n)**
+Therefore:
+
+```text
+Space Complexity = O(n)
+```
 
 ---
 
-## Key Points
+# Time Complexity vs Space Complexity
 
-* Space Complexity measures **extra memory used** by an algorithm.
-* It is based on the **input size (N)**.
-* Constant extra memory → **O(1)**
-* Memory that grows with `N` → **O(n)**
+| Complexity           | Meaning                                                           |
+| -------------------- | ----------------------------------------------------------------- |
+| **Time Complexity**  | Rate at which the number of operations increases with input size  |
+| **Space Complexity** | Rate at which the extra memory required increases with input size |
+
+### Quick Revision
+
+**TC → Growth of operations**
+
+**SC → Growth of extra memory**
+
+**Big-O → Describes the growth rate of an algorithm**
